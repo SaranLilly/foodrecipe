@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import {
   StyleSheet,
   Button,
@@ -11,6 +12,7 @@ import {
 } from 'react-native';
 import { Image } from 'expo-image';
 import { ScrollView } from 'react-native-gesture-handler';
+import SettingScreen from './setting';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -19,6 +21,7 @@ const Stack = createStackNavigator();
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
+    
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Breakfast" component={BreakfastScreen} />
       <Stack.Screen name="Lunch" component={LunchScreen} />
@@ -50,10 +53,12 @@ const HomeScreen = ({ navigation }) => (
     <View>
       <Text style={styles.title}>
         Make your own food, stay at home
+     
       </Text>
+     
+          <Separator />
       <Image source={require('../recipemobile/assets/oatmeal.jpeg')} style={{ width:370,height:80 ,marginLeft:6,borderRadius:50,marginTop:15}}/>
       <Button
-     
         title="Breakfast"
         onPress={() => navigation.navigate('Breakfast')}
         color="orange"
@@ -115,25 +120,35 @@ const HomeScreen = ({ navigation }) => (
 // );
 const BreakfastScreen = ({ navigation }) => (
   <View>
-     <Text>This is the Breakfast Screen</Text>
+     <Text style={styles.breakfast}>
+    {/* Breakfast */}
+     </Text>
+     <Image source={require('../recipemobile/assets/chaffle.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
     <Button
       title="Chaffle"
       onPress={() => navigation.navigate('Chaffle')}
+      color="orange"
     />
      <Separator />
+     <Image source={require('../recipemobile/assets/papeta.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
     <Button
       title="Papeta"
       onPress={() => navigation.navigate('Papeta')}
+      color="orange"
     />
     <Separator />
+    <Image source={require('../recipemobile/assets/tortilla.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
     <Button
       title="Tortilla"
       onPress={() => navigation.navigate('Tortilla')}
+      color="orange"
     />
      <Separator />
+     <Image source={require('../recipemobile/assets/oatmeal.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
     <Button
       title="Oatmeal"
       onPress={() => navigation.navigate('Oatmeal')}
+      color="orange"
     />
    
   </View>
@@ -141,21 +156,35 @@ const BreakfastScreen = ({ navigation }) => (
 
 const LunchScreen = ({ navigation }) => (
   <View>
-    <Text>This is the Lunch Screen</Text>
+    <Text style={styles.breakfast}></Text>
+
     <Separator />
+    <Image source={require('../recipemobile/assets/sloppy.jpg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
       <Button
         title="Sloppy"
         onPress={() => navigation.navigate('Sloppy')}
+        color="orange"
       />
       <Separator />
+      <Image source={require('../recipemobile/assets/pasta.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
       <Button
         title="Pasta"
         onPress={() => navigation.navigate('Pasta')}
+        color="orange"
       />
       <Separator />
+      <Image source={require('../recipemobile/assets/Grilled.jpg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
       <Button
         title="Grilled"
         onPress={() => navigation.navigate('Grilled')}
+        color="orange"
+      />
+      <Separator />
+      <Image source={require('../recipemobile/assets/ham.jpeg')} style={{ width:380,height:80 ,marginLeft:15,borderRadius:50,marginTop:15}}/>
+      <Button
+        title="Ham"
+        onPress={() => navigation.navigate('Grilled')}
+        color="orange"
       />
   </View>
 );
@@ -459,24 +488,24 @@ const GrilledScreen = () => (
 
 const ChaffleScreen = () => (
   <View>
-    <Image source={require('../recipemobile/assets/chaffle.jpeg')} style={{ width:250,height:250 ,marginLeft:80,borderRadius:50,marginTop:15}}/>
+    <Image source={require('../recipemobile/assets/chaffle.jpeg')} style={{ width:420,height:250 ,marginLeft:0,borderRadius:50,marginTop:15}}/>
       <Text style={styles.ChaffleScreen}>A chaffle is a low-carb, cheese-and-egg-based waffle that's taken the keto world by storm, thanks to its fluffy texture and crispy edges. We opted to use Cheddar for the cheese and added scallions and parsley for a sweet and savory twist on the popular dish. For the fluffiest chaffle, use only finely shredded cheese––it will blend better with the egg than large shreds.</Text>
       <View>
-        <Text>Ingredients:</Text>
-        <Text>4 large eggs</Text>
-        <Text>2 cups finely shredded mild Cheddar </Text>
-        <Text>2 scallions, thinly sliced </Text>
-        <Text>1 tablespoon finely chopped fresh parsley </Text>
-        <Text>1 tablespoon finely chopped fresh parsley </Text>
-        <Text>Nonstick cooking spray </Text>
-        <Text>Unsalted butter, for serving</Text>
-        <Text>Sugar-free maple syrup, for serving </Text>
+        <Text style={styles.ChaffleScreen}>Ingredients:</Text>
+        <Text style={styles.ChaffleScreen2}>4 large eggs</Text>
+        <Text style={styles.ChaffleScreen2}>2 cups finely shredded mild Cheddar </Text>
+        <Text style={styles.ChaffleScreen2}>2 scallions, thinly sliced </Text>
+        <Text style={styles.ChaffleScreen2}>1 tablespoon finely chopped fresh parsley </Text>
+        <Text style={styles.ChaffleScreen2}>1 tablespoon finely chopped fresh parsley </Text>
+        <Text style={styles.ChaffleScreen2}>Nonstick cooking spray </Text>
+        <Text style={styles.ChaffleScreen2}>Unsalted butter, for serving</Text>
+        <Text style={styles.ChaffleScreen2}>Sugar-free maple syrup, for serving </Text>
       </View>
       <View>
-        <Text>Directions:</Text>
-        <Text>1.Preheat a waffle iron to medium-high. Whisk the eggs in a large bowl until well beaten and smooth. Whisk in the Cheddar, scallions, parsley, 1/4 teaspoon salt and a few grinds of pepper.</Text>
-        <Text>2.Coat the waffle iron with nonstick cooking spray, then ladle a heaping 1/4 cup of batter into each section. Close the lid and cook until well browned and fluffy, 4 to 5 minutes. Use a small offset spatula or tongs to transfer the chaffles to a serving plate. Repeat with the remaining batter. </Text>
-        <Text>3.Top each chaffle with a pat of butter and drizzle with maple syrup.  </Text>
+        <Text style={styles.ChaffleScreen}>Directions:</Text>
+        <Text style={styles.ChaffleScreen2}>1.Preheat a waffle iron to medium-high. Whisk the eggs in a large bowl until well beaten and smooth. Whisk in the Cheddar, scallions, parsley, 1/4 teaspoon salt and a few grinds of pepper.</Text>
+        <Text style={styles.ChaffleScreen2}>2.Coat the waffle iron with nonstick cooking spray, then ladle a heaping 1/4 cup of batter into each section. Close the lid and cook until well browned and fluffy, 4 to 5 minutes. Use a small offset spatula or tongs to transfer the chaffles to a serving plate. Repeat with the remaining batter. </Text>
+        <Text style={styles.ChaffleScreen2}>3.Top each chaffle with a pat of butter and drizzle with maple syrup.  </Text>
       </View>
    
   </View>
@@ -573,6 +602,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     marginHorizontal: 16,
+   
   },
   title: {
     textAlign: 'center',
@@ -590,8 +620,25 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   ChaffleScreen:{
-    fontSize:15,
-    marginTop:10
+    fontSize:16,
+    marginTop:10,
+    fontWeight:'bold',
+    marginLeft:5,
+    
+  },
+  ChaffleScreen2:{
+    fontSize:16,
+    fontWeight:'normal',
+    marginLeft:5,
+    
+  },
+  breakfast:{
+    marginTop:30,
+    fontSize:30,
+    marginLeft:100,
+    fontWeight:'bold',
+    
+    
   }
 });
 
